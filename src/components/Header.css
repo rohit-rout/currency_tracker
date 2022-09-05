@@ -1,0 +1,22 @@
+.main {
+  /* position: fixed; */
+  height: fit-content;
+  padding: 1rem;
+  width: 100vw;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: yellow;
+}
+
+.choose_currency {
+  margin-right: 5rem;
+}
+.title {
+  text-decoration: none;
+  color: yellow;
+  margin-left: 5rem;
+  cursor: pointer;
+}
