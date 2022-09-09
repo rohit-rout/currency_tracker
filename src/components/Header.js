@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
 import "./Header.css";
 const Header = (props) => {
-  const { currency, setCurrency, symbol } = CryptoState();
+  const { currency, setCurrency} = CryptoState();
   return (
     <div className="main">
       <Link to="/" className="title">
@@ -17,7 +17,7 @@ const Header = (props) => {
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
         >
-          <option value="ISD">ISD </option>
+          <option value="USD">USD </option>
           <option value="INR">INR</option>
         </select>
       </div>

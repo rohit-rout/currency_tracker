@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Banner from "../components/Banner"
 const MainPage = () => {
   return (
-    <div>
-      <h1> this is main page</h1>
-    </div>
+    <>
+     <Banner/>
+    </>
   )
 }
 
