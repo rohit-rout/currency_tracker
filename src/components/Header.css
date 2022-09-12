@@ -2,13 +2,14 @@
   /* position: fixed; */
   height: fit-content;
   padding: 1rem;
-  width: 100vw;
+  /* width: 100vw; */
   background-color: rgb(27, 27, 27);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: yellow;
+  color: #FFB200;
+  font-weight: bolder;
 }
 
 .choose_currency {
@@ -16,7 +17,19 @@
 }
 .title {
   text-decoration: none;
-  color: yellow;
+  color: #FFB200;
   margin-left: 5rem;
   cursor: pointer;
+  font-weight: bolder;
 }
+select{
+  background-color: black;
+  color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-size: medium;
+}
+
+

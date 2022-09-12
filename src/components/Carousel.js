@@ -2,19 +2,20 @@ import React,{useState} from 'react'
 import axios from 'axios';
 import { useEffect } from 'react'
 import { getTrending } from '../config/api';
-import { CryptoState } from '../CryptoContext';
+
 import Card from "./Card";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { CryptoState } from '../CryptoContext';
 const Carousel = () => {
     const [coins,setCoins]=useState([]);
+    const {currency} =CryptoState();
 
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
         1024: { items: 3 }
       };
-  const {currency} =CryptoState();
   console.log(coins);
   const fetchCoins=async()=>{
     const data=await axios.get(getTrending(currency));

@@ -1,0 +1,27 @@
+
+
+.coin_container{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content:start
+}
+img{
+    margin-right: 1rem;
+}
+.coin_data{
+
+     display: flex;
+    flex-direction: column;
+    height:inherit;
+}
+.text_field{
+width:inherit !important;
+margin:1rem 0 !important;
+}
+
+
+
+.MuiPaginationItem-root{
+ color: gold !important;
+}

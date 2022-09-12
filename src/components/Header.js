@@ -7,18 +7,18 @@ const Header = (props) => {
   return (
     <div className="main">
       <Link to="/" className="title">
-        Crypt-o-Hunt
+        <h2>Crypt-o-Hunt</h2>
       </Link>
       <div className="choose_currency">
-        <label htmlFor="currency">Choose a currency : </label>
+        <label htmlFor="currency"> </label>
         <select
           name="currency"
           id="currency"
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
         >
-          <option value="USD">USD </option>
-          <option value="INR">INR</option>
+          <option value="USD" >&#160;USD </option>
+          <option value="INR">&#160;INR </option>
         </select>
       </div>
     </div>
