@@ -16,7 +16,7 @@ const Carousel = () => {
         568: { items: 2 },
         1024: { items: 3 }
       };
-  console.log(coins);
+
   const fetchCoins=async()=>{
     const data=await axios.get(getTrending(currency));
     setCoins(data.data); 

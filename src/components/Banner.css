@@ -10,14 +10,14 @@
     justify-content: center;
 
 }
-h1{
+.banner_text > h1{
    font-weight: bold;
    font-size:  3rem;
    color: white;
    margin-bottom: 10px;
    
 }
-h3{
+.banner_text > h3{
     color: rgb(160, 159, 159);
     font-weight: 300;
     margin-top: 20px;

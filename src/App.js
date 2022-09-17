@@ -11,14 +11,10 @@ import Error from "./pages/Error";
 function App() {
   return (
     <>
-  
-    
-
-
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/coins" element={<CoinPage />} />
+        <Route path="/coin/:id" element={<CoinPage />} />
         <Route path="*" element={<Error/>}/>
       </Routes>
      

@@ -6,12 +6,13 @@
     align-items: center;
     justify-content:start
 }
-img{
-    margin-right: 1rem;
+.coin_image{
+    margin-right: 1rem !important;
 }
 .coin_data{
 
      display: flex;
+     justify-content: center;
     flex-direction: column;
     height:inherit;
 }

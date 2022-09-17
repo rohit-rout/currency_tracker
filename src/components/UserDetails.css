@@ -1,0 +1,31 @@
+
+
+.user_container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+height: 100vh;
+width: 25%;
+position :absolute;
+background-color:rgb(68, 67, 67);
+right: 0;
+top: 0;
+}
+
+.user_coinsList{
+    min-width: 100%;
+    min-height: 50%;
+    overflow: scroll;
+    background-color: grey;
+}
+.display_button{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content:space-between;
+  background-color: rgb(106, 102, 102);
+  border-bottom: 0.5px solid black;
+  color: goldenrod;
+  
+}

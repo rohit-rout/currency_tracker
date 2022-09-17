@@ -1,0 +1,10 @@
+.coin_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ a{
+    text-decoration: none;
+    color: goldenrod;
+ }

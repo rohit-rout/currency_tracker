@@ -14,10 +14,12 @@ import { ConvertCommas } from "./Card";
 import "./CoinTable.css";
 import { Container, Pagination, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
+import { useNavigate } from "react-router-dom";
+
 
 // Function to convert a number to international currency system
 
-function convertToInternationalCurrencySystem(labelValue) {
+export function convertToInternationalCurrencySystem(labelValue) {
   // Nine Zeroes for Billions
   return Math.abs(Number(labelValue)) >= 1.0e9
     ? (Math.abs(Number(labelValue)) / 1.0e9).toFixed(2) + "B"
@@ -30,6 +32,9 @@ function convertToInternationalCurrencySystem(labelValue) {
     : Math.abs(Number(labelValue));
 }
 
+
+
+
 //
 
 const row_index = ["Coin", "Price", "24h Change", "Market Cap"];
@@ -38,6 +43,10 @@ const CoinTable = () => {
   const [Search, setSearch] = useState("");
   const [curPage, setCurPage] = useState(1);
   const { currency, symbol } = CryptoState();
+  
+  let navigate = useNavigate();
+
+
 
   async function fectchAllCoins() {
     const { data } = await axios.get(CoinsList(currency));
@@ -53,7 +62,6 @@ const CoinTable = () => {
               coin.symbol.toLowerCase().includes(Search)
           )
         : allCoins;
-    // setFilterCoins(array);
     return array?.slice(curPage - 1, Math.min(curPage - 1 + 10, array.length));
   };
   const filterSearch = () => {
@@ -66,13 +74,17 @@ const CoinTable = () => {
       : allCoins;
   };
 
+
   useEffect(() => {
     fectchAllCoins();
+   
   }, [currency]);
+  
+
+
 
   return (
     <>
-      {/* <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} /> */}
       <TableContainer component={Paper}>
         <Container maxWidth="lg">
           <Typography variant="h4" style={{ margin: 18 }}>
@@ -110,11 +122,12 @@ const CoinTable = () => {
               {filterPage()?.map((coin, index) => {
                 let profit = coin.price_change_percentage_24h > 0;
                 return (
-                  <TableRow key={index} sx={{ border: 0 }}>
+                 
+                  <TableRow id="row" key={index}  sx={{  border:0 , cursor:"pointer" ,":hover":{backgroundColor:"#131111"}}} onClick={()=>navigate(`/coin/${coin.id}`)}>
                     <TableCell component="th" scope="row">
                       <div className="coin_container">
-                        <img src={coin.image} alt={coin.name} height="50" />
-                        <div className="coin_data">
+                        <img src={coin.image} alt={coin.name} height="50" className="coin_image" />
+                        <div className="coin_data" >
                           <h3>{coin.symbol.toUpperCase()}</h3>
                           <h4>{coin.name}</h4>
                         </div>
@@ -146,6 +159,7 @@ const CoinTable = () => {
                       )}
                     </TableCell>
                   </TableRow>
+            
                 );
               })}
             </TableBody>

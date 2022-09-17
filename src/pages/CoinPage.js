@@ -1,11 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
+import CoinInfo from "../components/CoinInfo";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from '@mui/material/CssBaseline';
 
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 const CoinPage = () => {
-  return (
-    <div>
-      <h1> this is coin page</h1>
-    </div>
-  )
-}
+  const { id } = useParams();
 
-export default CoinPage
+  return (
+    <>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline/>
+        <CoinInfo id={id}></CoinInfo>
+      </ThemeProvider>
+    </>
+  );
+};
+
+export default CoinPage;
